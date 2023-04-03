@@ -47,9 +47,6 @@ wss.on("connection", function connection(ws) {
 
         let wavForLocal = new WaveFile();
 
-        const inboundAudioBuffer = Buffer.from(inbound_samples);
-        const outboundAudioBuffer = Buffer.from(outbound_samples);
-
         wavForLocal.fromScratch(2, 8000, "8m", [
             inbound_samples,
             outbound_samples
