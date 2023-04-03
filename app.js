@@ -46,8 +46,12 @@ wss.on("connection", function connection(ws) {
         console.log(`Call Has Ended, Creating WAV file`);
 
         let wavForLocal = new WaveFile();
+        let numChannels = 2;
+        let sampleRate = 8000;
+        let bitDepth = "8m" //"8m" - 8-bit mu-Law
 
-        wavForLocal.fromScratch(2, 8000, "8m", [
+        // Create WAV file
+        wavForLocal.fromScratch(numChannels, sampleRate, bitDepth, [
             inbound_samples,
             outbound_samples
         ]);
